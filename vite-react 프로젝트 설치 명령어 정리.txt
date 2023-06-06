@@ -1,0 +1,15 @@
+npm install -g vite
+
+npm install -g yarn
+
+yarn create vite react-study --template react
+
+프로젝트 폴더로 가서(cd react-study)
+
+yarn
+
+yarn dev
+
+yarn add react
+
+yarn add react-router-dom
