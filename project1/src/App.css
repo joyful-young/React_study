@@ -2,7 +2,7 @@ body {
   padding: 20px;
 }
 
-.App {
+#root {
   margin: 0 auto;
   width: 500px;
 }
