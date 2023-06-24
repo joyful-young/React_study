@@ -100,3 +100,25 @@ useEffect(() => {
 ```
 
 - State 값을 초기화할 때도 useEffect가 이 변화를 감지한다.
+
+### 컴포넌트 언마운트 제어
+
+- 클린업(Cleanup)
+  - *특정 함수가 실행되고 종료된 후에, 미처 정리하지 못한 사항을 처리하는 일*
+
+  ```javascript
+  useEffect(() => {
+    const intervalID = setInterval(() => {
+      console.log("깜빡")
+    }, 1000)
+
+    // 콜백 함수를 다시 호출하기 전에 실행되어 컴포넌트를 렌더링할 때마다 새 인터벌 생성, 기존 인터벌 삭제
+    return () => {
+      console.log("클린업")
+      clearInterval(intervalID)
+    }
+  })
+  ```
+
+  - `클린업 함수`: useEffect의 콜백 함수가 반환하는 함수
+    - 콜백 함수를 다시 호출하기 전에 실행됨
